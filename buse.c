@@ -148,11 +148,11 @@ int buse_main(const char* dev_file, const struct buse_operations *aop, void *use
   /* The parent opens the device file at least once, to make sure the
    * partition table is updated. Then it closes it and starts serving up
    * requests. */
-
+#if 0
   tmp_fd = open(dev_file, O_RDONLY);
   assert(tmp_fd != -1);
   close(tmp_fd);
-
+#endif
   close(sp[1]);
   sk = sp[0];
 
